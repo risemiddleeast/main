@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RISE Middle East</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <a href="index.html">RISE Middle East</a>
+    </div>
+    
+    <!-- LAPTOP NAVIGATION: Remains visible on large screens -->
+    <nav class="desktop-nav">
+        <a href="mission.html">Mission</a>
+        <a href="programs.html">Programs</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- MOBILE HAMBURGER BUTTON: Hidden on laptop views -->
+    <button class="hamburger" aria-label="Toggle navigation" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</header>
+
+<!-- MOBILE DRAWER MENU: Hidden on laptop views -->
+<nav class="drawer-menu" id="drawerMenu">
+    <a href="mission.html" onclick="toggleMenu()">Mission</a>
+    <a href="programs.html" onclick="toggleMenu()">Programs</a>
+    <a href="team.html" onclick="toggleMenu()">Team</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+</nav>
+
+<!-- DARK OVERLAY BACKGROUND: Dim-out effect on mobile open -->
+<div class="overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+<!-- HERO VIDEO -->
+<section class="hero">
+    <video autoplay muted loop class="hero-video">
+        <source src="images/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+        <h1>RISE Middle East</h1>
+        <p>Empowering the Youth Across the Region</p>
+    </div>
+</section>
+
+<!-- PROGRAMS SECTION BELOW VIDEO -->
+<section class="programs-section">
+    <h2>Our Programs</h2>
+    <div class="programs-grid">
+        <div class="program">
+            <h2>Mentorship</h2>
+            <p>The Mentorship program is an intensive, year-long, self-paced initiative in which you will be paired with a student mentor who will help guide you in building a passion project. Whether you want to launch a startup, a nonprofit, or a smaller community initiative, mentors are there to help turn your ideas into reality.</p>
+        </div>
+        <div class="program">
+            <h2>Summer 2026 Program</h2>
+            <p>Our Summer Program is a week-long, online exploration course designed to help students discover various career paths. Each day focuses on a different sector, allowing participants to build practical skills and hear directly from professionals in the industry.
+            </p>
+        </div>
+        <div class="program">
+            <h2>Winter Seminar</h2>
+            <p>The Winter Seminar helps students explore summer opportunities, connect with peers, and build essential networking skills. This foundational course is designed to set participants up for future success by focusing on leadership, collaboration, and team-based projects.</p>
+        </div>
+    </div>
+</section>
+
+<!-- JAVASCRIPT LOGIC FOR MOBILE OPEN/CLOSE -->
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('drawerMenu');
+    const overlay = document.getElementById('menuOverlay');
+    
+    menu.classList.toggle('open');
+    overlay.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

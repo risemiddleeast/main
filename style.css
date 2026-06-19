@@ -1,0 +1,534 @@
+/* FONTS */
+@font-face {
+    font-family: "Nexa";
+    src: url("fonts/Nexa-Heavy.ttf") format("truetype");
+    font-weight: bold;
+}
+
+/* COLORS */
+:root {
+    --primary: #704775;
+    --white: #FFFFFF;
+    --black: #000000;
+    --accent1: #FFC6C6;
+    --accent2: #F5E3B5;
+}
+
+/* GLOBAL */
+body{
+    margin:0;
+    font-family:'Nunito Sans', sans-serif;
+    background: var(--white);
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;  /* reduced padding */
+    background: #704775;
+    color: #FFFFFF;
+    z-index:1000;
+    box-sizing: border-box;
+}
+
+.navbar .logo a{
+    font-family:"Nexa", sans-serif;
+    font-weight: bold;
+    font-size:22px;
+    color: #FFFFFF;
+    text-decoration:none;
+}
+
+nav{
+    display:flex;
+    gap:15px;   /* reduce space between tabs */
+    flex-wrap: wrap;
+}
+
+nav a{
+    color: #FFFFFF;
+    text-decoration:none;
+    font-weight:600;
+    font-family:'Nunito Sans', sans-serif;
+    padding: 6px 10px;  /* smaller padding so tabs fit */
+    white-space: nowrap;
+}
+
+nav a:hover{
+    opacity:0.85;
+    transition: opacity 0.2s;
+}
+
+/* Responsive for smaller screens */
+@media(max-width:900px){
+    .navbar{
+        flex-direction: column;
+        align-items:flex-start;
+        padding: 12px 20px;
+    }
+    nav{
+        gap:12px;
+        margin-top:8px;
+    }
+}
+/* NAVIGATION TABS */
+nav{
+    display:flex;
+    gap:25px; /* reduce spacing between tabs */
+}
+
+nav a{
+    color: var(--white);
+    text-decoration:none;
+    font-weight:600;
+    font-family:'Nunito Sans', sans-serif; /* correct font */
+    padding: 8px 12px; /* smaller padding so tabs fit better */
+    white-space: nowrap;
+}
+
+nav a:hover{
+    opacity:0.85;
+    transition: opacity 0.2s;
+}
+
+/* HERO VIDEO */
+.hero{
+    position: relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    min-width:100%;
+    min-height:100%;
+    transform: translate(-50%,-50%);
+    object-fit:cover;
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+    color: var(--white);
+}
+
+.hero-text h1{
+    font-size:80px;
+    font-family:"Nexa", sans-serif;
+}
+
+.hero-text p{
+    font-size:22px;
+    color: var(--accent1);
+    font-family:'Nunito Sans', sans-serif;
+}
+
+/* PAGE SECTIONS */
+.page{
+    padding-top:120px;
+    padding-left:15%;
+    padding-right:15%;
+}
+
+.page h1{
+    font-family:"Nexa", sans-serif;
+    color: var(--primary);
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.page p{
+    font-family:'Nunito Sans', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* PROGRAMS SECTION */
+.programs-section{
+    padding:100px 15%;
+    text-align:center;
+    background: var(--accent2);
+}
+
+.programs-section h2{
+    font-family:"Nexa", sans-serif;
+    color: var(--primary);
+    font-size:50px;
+    margin-bottom:40px;
+}
+
+.programs-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:10px;
+}
+
+.program{
+    background: var(--accent1);
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+.program h3{
+    font-family:"Nexa", sans-serif;
+    color: var(--primary);
+    margin-bottom:15px;
+}
+
+.program p{
+    font-size:16px;
+    line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .navbar{
+        flex-direction: column;
+        align-items:flex-start;
+        padding: 15px 20px;
+    }
+    nav{
+        gap:15px;
+        margin-top:10px;
+    }
+    .hero-text h1{
+        font-size:40px;
+    }
+    .hero-text p{
+        font-size:18px;
+    }
+}
+/* PAGE BACKGROUND FOR ALL SUB PAGES */
+.pink-page{
+    background:#e1b3b3;
+    min-height:100vh;
+    padding-top:120px;
+    padding-left:8%;
+    padding-right:8%;
+    padding-bottom:80px;
+}
+
+/* PAGE TITLE */
+.page-title{
+    font-family:"Nexa", sans-serif;
+    font-size:64px;
+    color:#000000;
+    margin-bottom:60px;
+}
+
+/* TWO COLUMN LAYOUT */
+.content-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+/* LEFT IMAGE */
+.page-image{
+    width:100%;
+    border-radius:40px;
+    object-fit:cover;
+    transform: translateY(-80px);
+ }
+
+/* RIGHT TEXT */
+.page-text{
+    font-family:'Nunito Sans', sans-serif;
+    font-size:17px;
+    color:#ffffff;
+    line-height:1.8;
+}
+
+/* BUTTON */
+.cta-button{
+    display:inline-block;
+    margin-top:40px;
+    margin-left:200px;
+    background:#F5E3B5;
+    padding:14px 28px;
+    border-radius:30px;
+    font-family:'Nunito Sans', sans-serif;
+    font-weight:600;
+    color:#704775;
+    text-decoration:none;
+}
+
+.cta-button:hover{
+    opacity:0.9;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .content-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .page-title{
+        font-size:42px;
+    }
+
+}
+/* TEAM PAGE */
+
+.team-page{
+    background:#B8A3BA;
+    min-height:100vh;
+    padding-top:120px;
+    padding-left:8%;
+    padding-right:8%;
+    padding-bottom:80px;
+}
+    
+    .team-title{
+    font-family:"Nexa", sans-serif;
+    font-size:64px;
+    color:#000000;
+    margin-bottom:60px;
+    }
+    
+    .team-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:60px;
+    text-align:center;
+    }
+    
+    .team-member img{
+        width:100%;
+        aspect-ratio:1/1;
+        object-fit:cover;
+        border-radius:30px;
+    }
+    
+    .team-member h3{
+    font-family:"Nexa", sans-serif;
+    font-size:26px;
+    color:#ffffff;
+    margin-top:20px;
+    margin-bottom:5px;
+    }
+    
+    .team-member p{
+        font-family:'Nunito Sans', sans-serif;
+        color:#FFFFFF;
+        opacity:0.8;
+        }
+    
+    /* responsive */
+    
+    @media(max-width:900px){
+    
+    .team-grid{
+    grid-template-columns:1fr;
+    }
+    
+    .team-title{
+    font-size:40px;
+    }
+    .team-member:hover{
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+    
+    }
+    /* PROGRAMS PAGE */
+
+.programs-page{
+    padding:120px 8%;
+    background:#F5E3B5;
+    min-height:100vh;
+    }
+    
+    .programs-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    margin-top:60px;
+    }
+    
+    .programs-image img{
+    width:90%;
+    border-radius:55px;
+    transform: translateX(40px);
+    }
+    
+    .programs-text h2{
+    font-size:40px;
+    margin-bottom:25px;
+    }
+    
+    .programs-text p{
+    font-size:23px;
+    line-height:1.6;
+    max-width:500px;
+    }
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px){
+
+    /* NAVBAR */
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding:15px 20px;
+    }
+    
+    nav{
+        margin-top:10px;
+        gap:12px;
+    }
+    
+    /* HERO TEXT */
+    .hero-text h1{
+        font-size:36px;
+    }
+    
+    .hero-text p{
+        font-size:16px;
+    }
+    
+    /* MISSION PAGE */
+    .content-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+    
+    /* TEAM PAGE */
+    .team-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+    
+    /* PAGE TITLES */
+    .page-title,
+    .team-title{
+        font-size:40px;
+    }
+    
+    }
+    /* PAGE TITLE FADE IN */
+
+.page-title{
+    animation: fadeTitle 1.2s ease forwards;
+    opacity:0;
+}
+
+@keyframes fadeTitle{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+ /* Right column: Image container */
+ .contact-image-side {
+    flex: 1;
+    display: flex;
+  }
+
+  /* Forces your source image to fill the space cleanly */
+  .contact-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image elegantly to fit the box */
+    display: block;
+  }
+  /* --- MOBILE RESPONSIVE NAVIGATION STYLES --- */
+
+/* Base settings: Hide mobile menu components by default on laptop/desktop */
+.hamburger, .drawer-menu, .overlay {
+    display: none;
+}
+
+/* Mobile-Specific Styles (Triggered only on smaller screens) */
+@media (max-width: 768px) {
+    /* Hide standard horizontal links on mobile */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Display hamburger button */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 25px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #333; /* Change to white if your navbar text is white */
+        border-radius: 2px;
+    }
+
+    /* Position drawer menu fixed off-screen to the right */
+    .drawer-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -250px; /* Slides from right side */
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        padding-top: 60px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .drawer-menu a {
+        padding: 15px 25px;
+        text-decoration: none;
+        color: #333;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 18px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Screen dimming background overlay */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 998;
+    }
+
+    /* Active open states applied by JavaScript */
+    .drawer-menu.open {
+        right: 0; /* Slides into viewport */
+    }
+
+    .overlay.open {
+        display: block;
+    }
+}

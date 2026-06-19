@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission | RISE Middle East</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">RISE Middle East</a>
+        </div>
+        
+        <!-- Update your old <nav> to use this class -->
+        <nav class="desktop-nav">
+            <a href="mission.html">Mission</a>
+            <a href="programs.html">Programs</a>
+            <a href="team.html">Team</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    
+        <!-- ADD THIS: Mobile Hamburger Button -->
+        <button class="hamburger" aria-label="Toggle navigation" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+    
+    <!-- ADD THIS: Mobile Drawer Menu -->
+    <nav class="drawer-menu" id="drawerMenu">
+        <a href="mission.html" onclick="toggleMenu()">Mission</a>
+        <a href="programs.html" onclick="toggleMenu()">Programs</a>
+        <a href="team.html" onclick="toggleMenu()">Team</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    </nav>
+    
+    <!-- ADD THIS: Dark Overlay -->
+    <div class="overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+    
+
+
+<section class="pink-page">
+<h1 class="page-title">Contact Us</h1> 
+<style>
+    /* The layout container that splits the page */
+    .contact-page-wrapper {
+      display: flex;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #704775;
+      border-radius: 12px;
+      overflow: hidden; /* Keeps image corners rounded */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  
+    /* Left column: The Form */
+    .contact-form-side {
+      flex: 1;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+  
+    /* Right column: Image container */
+    .contact-image-side {
+      flex: 1;
+      display: flex;
+      background-color: #704775; /* Subtle background color behind the logo */
+    }
+  
+    /* Forces your logo image to fill the space cleanly */
+    .contact-image-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Keeps the logo proportions perfect without cropping it */
+      display: block;
+      padding: 20px; /* Optional: adds breathing room around your logo */
+      box-sizing: border-box;
+    }
+  
+    /* Form spacing elements */
+    .form-group {
+      margin-bottom: 24px;
+    }
+  
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      color: #FFC6C6;
+      background-color: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+  
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+  
+    /* Flat focus style with absolutely no glow */
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background-color: #ffffff;
+      border-color: #F5E3B5; /* Darkens the border flatly when active */
+    }
+  
+    /* Flat submit button */
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: black;
+      background-color: #F5E3B5; /* Dark elegant flat color */
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  
+    .submit-btn:hover {
+      background-color: #FFC6C6;
+    }
+  
+    /* Responsive layout for smaller screens / mobile */
+    @media (max-width: 768px) {
+      .contact-page-wrapper {
+        flex-direction: column;
+        margin: 20px;
+      }
+      .contact-image-side {
+        height: 250px;
+        order: -1; /* Puts image on top for mobile screens */
+      }
+      .contact-form-side {
+        padding: 24px;
+      }
+    }
+  </style>
+  
+  <div class="contact-page-wrapper">
+    
+    <!-- Left Side: Form -->
+    <div class="contact-form-side">
+      <form action="https://formspree.io/f/xgobwvyo" method="POST">
+        
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Cool Name" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+        </div>
+  
+        <button type="submit" class="submit-btn">Send Message</button>
+        
+      </form>
+</div>
+  
+    <!-- Right Side: Logo Box -->
+    <div class="contact-image-side">
+    <img src="images/rise-logo.png">
+    </div>
+  
+</div>
