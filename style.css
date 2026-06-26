@@ -12,6 +12,7 @@
     --black: #000000;
     --accent1: #FFC6C6;
     --accent2: #F5E3B5;
+    --accent3: #debae1;
 }
 
 /* GLOBAL */
@@ -134,31 +135,204 @@ nav a:hover{
     font-family:'Nunito Sans', sans-serif;
 }
 
-/* PAGE SECTIONS */
-.page{
-    padding-top:120px;
-    padding-left:15%;
-    padding-right:15%;
+/* General Setup Adjustments */
+body {
+    font-family: 'Inter', sans-serif; /* Fallback for body text */
+    color: var(--black);
+    background-color: var(--accent1); /* Uses your specified pink color */
+    margin: 0;
 }
 
-.page h1{
-    font-family:"Nexa", sans-serif;
-    color: var(--primary);
-    font-size:36px;
-    margin-bottom:20px;
+/* Programs/Mission Section Layout */
+.programs-section {
+    /* Large vertical margins create a massive gap between sections */
+    margin-top: 1rem !important; 
+    margin-bottom: 1rem !important;
+    padding: 0 10%; 
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent1); /* Pure pink background, no boxes */
 }
 
-.page p{
-    font-family:'Nunito Sans', sans-serif;
-    font-size:16px;
-    line-height:1.7;
+/* Centered Typography Container */
+.mission-statement-container {
+    text-align: center;
+    max-width: 900px; 
+    margin: 0 auto;
 }
 
+/* Big, Bold Nexa Headline */
+.mission-headline {
+    font-family: "Nexa", sans-serif !important;
+    font-size: 4.2rem !important; /* Made larger to stand out without a box wrapper */
+    font-weight: bold !important;
+    line-height: 1.2 !important;
+    color: var(--primary) !important; /* Deep Purple */
+    margin: 0 0 2rem 0 !important;
+    letter-spacing: -1px !important;
+}
+
+/* Decorative Divider Line */
+.mission-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent3));
+    margin: 0 auto 2rem auto;
+    border-radius: 2px;
+
+}
+/* Crisp, clean Inter subtext */
+.mission-subtext {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.5rem !important;
+    line-height: 1.8 !important;
+    color: var(--black) !important;
+    max-width: 750px;
+    margin: 0 auto !important;
+    font-weight: 500 !important;
+    opacity: 0.85 !important;
+}
+
+/* Responsive Scaling for Phones */
+@media (max-width: 768px) {
+    .programs-section {
+        margin-top: 6rem !important;
+        margin-bottom: 6rem !important;
+        padding: 0 5%;
+    }
+    .mission-headline {
+        font-size: 2.6rem !important;
+    }
+    .mission-subtext {
+        font-size: 1.2rem !important;
+    }
+}
+/* Founder Section Styling */
+.founder-section {
+    background-color: #debae1; /* Soft contrast background */
+    padding: 5rem 2rem;
+}
+
+.founder-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.founder-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.founder-link {
+    position: relative;
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    
+    width: 400px;  
+    height: 500px; 
+    background-color: #ffffff; 
+    
+    /* UPDATED IMAGE PATH TO MATCH YOUR FILE FOLDER */
+    background-image: url('images/founder.png'); 
+    background-repeat: no-repeat !important;
+    background-position: center center !important; 
+    background-size: contain !important; 
+}
+
+/* Interactive Hover Effect for LinkedIn */
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(190, 76, 190, 0.8); 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.founder-link:hover .hover-overlay {
+    opacity: 1;
+}
+
+/* Typography & Layout Styles */
+.founder-text-container {
+    flex: 2;
+}
+
+.founder-heading {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #5a2b5c; /* Updated to complement your purple background */
+    margin-bottom: 1.5rem;
+}
+
+.founder-quote {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: #222;
+    margin: 0 0 2rem 0; 
+}
+
+.founder-signature {
+    border-top: 1px solid rgba(0, 0, 0, 0.15); 
+    padding-top: 1rem;
+    display: inline-block;
+}
+
+.founder-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #111;
+}
+
+.founder-title {
+    font-size: 1rem;
+    margin: 0.2rem 0 0 0;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design for smaller screens/phones */
+@media (max-width: 768px) {
+    .founder-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    
+    .founder-link {
+        width: 320px; /* Slightly smaller box for mobile screens */
+        height: 400px;
+    }
+    
+    .founder-signature {
+        display: block;
+    }
+}
 /* PROGRAMS SECTION */
 .programs-section{
     padding:100px 15%;
     text-align:center;
-    background: var(--accent2);
+    background: var(--accent1);
 }
 
 .programs-section h2{
@@ -286,7 +460,7 @@ nav a:hover{
 /* TEAM PAGE */
 
 .team-page{
-    background:#B8A3BA;
+    background:#debae1;
     min-height:100vh;
     padding-top:120px;
     padding-left:8%;
@@ -530,5 +704,74 @@ nav a:hover{
 
     .overlay.open {
         display: block;
+    }
+}
+/* Footer Styling */
+.site-footer {
+    background-color: var(--primary); /* Deep purple background */
+    color: var(--white);
+    padding: 4rem 10%;
+    margin-top: 4rem; /* Adds breathing room between the content above and the footer */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left Side Branding */
+.footer-brand {
+    flex: 1;
+}
+
+.footer-logo {
+    font-family: "Nexa", sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    color: var(--); /* Soft sand/cream color for the logo text */
+    letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--white);
+    opacity: 0.85;
+}
+
+/* Right Side Navigation Links */
+.footer-nav {
+    display: flex;
+    gap: 2.5rem; /* Space between each navigation item */
+}
+
+.footer-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Smooth color swap on hover */
+.footer-link:hover {
+    color: var(--accent1); /* Turns your signature pink color when hovered */
+}
+
+/* Responsive Layout for Mobile Devices */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    
+    .footer-nav {
+        flex-direction: column; /* Stacks links vertically on phones */
+        gap: 1.2rem;
     }
 }
